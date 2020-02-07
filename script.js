@@ -66,12 +66,12 @@ Splinter.hello();
 //make it with classes
 class Karen {
     constructor(name,city,age) {
-        this.name = `${name}`;
-        this.city = `${city}`;
-        this.age = `${age}`;
-        this.rbf = function () {
-            console.log(`Yeah, my name is ${this.name}. I am ${this.age} years old and live in ${this.city}.`)
-        }
+        this.name = name;
+        this.city = city;
+        this.age = age;
+    }
+    rbf() {
+        console.log(`Yeah, my name is ${this.name}. I am ${this.age} years old and live in ${this.city}.`)
     }
 }
 let Linda = new Karen('Linda','Bham',30);
@@ -86,3 +86,44 @@ Debbie.rbf();
 Lisa.rbf();
 
 
+class Vehicle {
+    constructor(type,manufacturer,wheels) {
+        this.type = type;
+        this.manufacturer = manufacturer;
+        this.wheels = wheels;
+    }
+    aboutVehicle() {
+        console.log(`This is a ${this.type} vehicle, made by ${this.manufacturer}, with ${this.wheels} wheels.`)
+    }
+}
+
+class Sedan extends Vehicle {
+    constructor(type,manufacturer,wheels,size,mpg) {
+        super(type,manufacturer,wheels);
+        this.size = size;
+        this.mpg = mpg;
+    }
+    aboutSedan() {
+        //super.aboutVehicle();
+        console.log(`This is a ${this.type} vehicle, made by ${this.manufacturer}, with ${this.wheels} wheels, is ${this.size} size, and gets ${this.mpg} mpg.`)
+        //console.log(super(type,manufacturer,wheels) `, is ${this.size} size, and gets ${this.mpg} mpg.`)
+    }
+}
+
+class Motorcycle extends Vehicle {
+    constructor(type,manufacturer,wheels,handlebars,doors) {
+        super(type,manufacturer,wheels);
+        this.handlebars = handlebars;
+        this.doors = doors;
+    }
+    aboutMotorcycle = function() {
+        console.log(`This is a ${this.type} vehicle, made by ${this.manufacturer}, with ${this.wheels} wheels, with ${this.handlebars}, and with ${this.doors} doors.`)
+    }
+}
+
+let v1 = new Vehicle('SUV','Toyota',4);
+v1.aboutVehicle();
+let s1 = new Sedan('Sedan','Honda',4,'medium',30);
+s1.aboutSedan();
+let m1 = new Motorcycle('Motorcycle','Harley',2,'handlebars','no');
+m1.aboutMotorcycle();
