@@ -104,9 +104,7 @@ class Sedan extends Vehicle {
         this.mpg = mpg;
     }
     aboutSedan() {
-        //super.aboutVehicle();
         console.log(`This is a ${this.type} vehicle, made by ${this.manufacturer}, with ${this.wheels} wheels, is ${this.size} size, and gets ${this.mpg} mpg.`)
-        //console.log(super(type,manufacturer,wheels) `, is ${this.size} size, and gets ${this.mpg} mpg.`)
     }
 }
 
